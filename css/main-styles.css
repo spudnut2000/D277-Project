@@ -1,0 +1,103 @@
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    --section-bg-color: #a0a0a0;
+    --nav-footer-bg-color: #555555;
+    --aside-bg-color: #4e4e4e;
+    --header-bg-color: #666666;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--section-bg-color);
+}
+
+
+/* ----- MAIN GRID START ----- */
+#grid-container {
+    display: grid;
+    width: 100vw;
+    height: auto;
+}
+
+
+#grid-container > header {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    width: 100%;
+    height: 8vh;
+    background-color: var(--header-bg-color);
+}
+
+#grid-container > section {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    width: 100%;
+    height: 100%;
+    min-height: 800px;
+    background-color: var(--section-bg-color);
+}
+
+#grid-container > footer {
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    width: 100%;
+    height: 8vh;
+    background-color: var(--nav-footer-bg-color);
+}
+
+#grid-container > aside {
+    grid-row-start: 2;
+    grid-row-end: 5;
+    grid-column-start: 5;
+    grid-column-end: 6;
+    width: 100%;
+    height: 100%;
+    background-color: var(--aside-bg-color);
+}
+/* ----- MAIN GRID END ----- */
+
+/* ----- NAV ----- */
+nav {
+    width: 100%;
+    height: 8vh;
+    background-color: var(--nav-footer-bg-color);
+    align-items: center;
+    display: flex;
+}
+
+nav h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+#nav-logo {
+    height: 85%;
+    float: left;
+    padding: 0 10px 0 10px;
+}
+
+nav ul {
+    list-style: none;
+    margin-left: auto;
+    display: flex;
+}
+
+.nav-element {
+    
+}
+
+.nav-element a {
+    text-decoration: none;
+    color: white;
+    padding: 0 10px 0 10px;
+}
