@@ -1,10 +1,12 @@
 * {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
-    --section-bg-color: #a0a0a0;
-    --nav-footer-bg-color: #555555;
-    --aside-bg-color: #4e4e4e;
-    --header-bg-color: #666666;
+    --section-bg-color: #ffffff;
+    --nav-footer-bg-color: #9b2222;
+    --aside-bg-color: #828a8f;
+    --header-bg-color: rgb(117, 31, 31);
+
+    --nav-element-animation-speed: 0.4s;
 }
 
 body {
@@ -14,7 +16,7 @@ body {
 }
 
 
-/* ----- MAIN GRID START ----- */
+/* ----- MAIN GRID ----- */
 #grid-container {
     display: grid;
     width: 100vw;
@@ -26,7 +28,7 @@ body {
     grid-row-start: 2;
     grid-row-end: 3;
     grid-column-start: 1;
-    grid-column-end: 5;
+    grid-column-end: 6;
     width: 100%;
     height: 8vh;
     background-color: var(--header-bg-color);
@@ -39,7 +41,7 @@ body {
     grid-column-end: 5;
     width: 100%;
     height: 100%;
-    min-height: 800px;
+    min-height: 76vh;
     background-color: var(--section-bg-color);
 }
 
@@ -47,15 +49,16 @@ body {
     grid-row-start: 4;
     grid-row-end: 5;
     grid-column-start: 1;
-    grid-column-end: 5;
+    grid-column-end: 6;
     width: 100%;
-    height: 8vh;
+    height: auto;
+    min-height: 8vh;
     background-color: var(--nav-footer-bg-color);
 }
 
 #grid-container > aside {
-    grid-row-start: 2;
-    grid-row-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 4;
     grid-column-start: 5;
     grid-column-end: 6;
     width: 100%;
@@ -63,6 +66,7 @@ body {
     background-color: var(--aside-bg-color);
 }
 /* ----- MAIN GRID END ----- */
+
 
 /* ----- NAV ----- */
 nav {
@@ -77,10 +81,18 @@ nav h1 {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    font-size: 2.5em;
+    color: white;
 }
 
-
 #nav-logo {
+    height: 100%;
+    width: auto;
+    display: flex;
+    align-items: center;
+}
+
+#nav-logo img {
     height: 85%;
     float: left;
     padding: 0 10px 0 10px;
@@ -92,12 +104,157 @@ nav ul {
     display: flex;
 }
 
-.nav-element {
-    
+.nav-element::after {
+    content: "|";
+    color: white;
+}
+
+.nav-element:last-child::after {
+    content: "";
 }
 
 .nav-element a {
     text-decoration: none;
     color: white;
-    padding: 0 10px 0 10px;
+    padding: 0 15px 0 15px;
+    outline: 2px solid rgba(0,0,0,0);
+    outline-offset: 20px;
+    transition: all var(--nav-element-animation-speed);
 }
+
+.nav-element a:hover {
+    outline: 2px solid white;
+    outline-offset: 1px;
+    transition: all var(--nav-element-animation-speed);
+}
+/* ----- NAV END ----- */
+
+
+/* ----- HEADER ----- */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header h1 {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+/* ----- HEADER END ----- */
+
+
+/* ----- SECTION ----- */
+section {
+    display: flex;
+    flex-direction: column;
+}
+
+section * {
+    margin-left: 1vw;
+}
+
+section img {
+    width: 100%;
+    object-fit: cover;
+    height: 25vh;
+    margin: 0;
+    padding: 0;
+}
+
+section h1 {
+    font-size: 3em;
+}
+
+section .reference {
+    vertical-align: super;
+    font-size: 0.6em;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+/* ----- SECTION END ----- */
+
+
+/* ----- ASIDE ----- */
+aside {
+    display: flex;
+    flex-direction: column;
+}
+
+aside h3 {
+    width: auto;
+    margin-left: 1vw;
+}
+
+aside ol {
+    margin-left: 2vw;
+}
+
+aside ol li a {
+    color: black;
+}
+/* ----- ASDIE END ----- */
+
+
+/* ----- FOOTER ----- */
+footer {
+    display: flex;
+    align-items: center;
+}
+
+#footer-nav {
+    list-style: none;
+    padding-left: 0;
+    align-items: flex-start;
+    margin: auto;
+    width: 30%;
+    text-align: center;
+}
+
+#footer-nav li {
+    padding: 0 5px 0 5px;
+    display: inline;
+}
+
+#footer-nav a {
+    text-decoration: underline;
+    color: white;
+}
+
+#footer-nav a:hover {
+    color: #999999;
+}
+/* ----- FOOTER END ----- */
+
+
+/* ----- MOBILE STYLES ----- */
+
+@media screen and (max-width: 1410px) {
+    nav h1 {
+        display: none;
+    }
+    
+}
+
+@media screen and (max-width: 800px) {
+    #grid-container > aside {
+        display: none;
+    }
+    
+    nav ul {
+        display: none;
+    }
+
+    nav h1 {
+        display: block;    
+    }
+
+    section h1 {
+        font-size: 2em;
+    }
+}
+
+/* ----- MOBILE STYLES END ----- */
