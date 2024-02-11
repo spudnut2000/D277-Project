@@ -152,16 +152,30 @@ section {
     flex-direction: column;
 }
 
-section * {
+section > * {
     margin-left: 1vw;
 }
 
-section img {
+section *:last-child {
+    margin-bottom: 4vh;
+}
+
+#section-heading-img {
     width: 100%;
     object-fit: cover;
     height: 25vh;
     margin: 0;
     padding: 0;
+}
+
+section img {
+    width: 30%;
+    height: auto; 
+    border: 1px solid black;
+}
+
+section .image-description {
+    font-size: 0.8em;
 }
 
 section h1 {
@@ -170,10 +184,34 @@ section h1 {
 
 section .reference {
     vertical-align: super;
-    font-size: 0.6em;
+    font-size: 0.8em;
     text-decoration: none;
     margin: 0;
     padding: 0;
+}
+
+section table {
+    width: 50%;
+    border: 1px solid black;
+}
+
+section table th {
+    border: 1px solid black;
+    background-color: var(--nav-footer-bg-color);
+    color: white;
+}
+
+section table td {
+    border: 1px solid black;
+}
+
+section table tr:nth-child(even) {
+    background-color: #cfcfcf;
+}
+
+section table caption {
+    font-size: 1.5em;
+    margin-bottom: 1vh;
 }
 /* ----- SECTION END ----- */
 
@@ -190,7 +228,7 @@ aside h3 {
 }
 
 aside ol {
-    margin-left: 2vw;
+    margin-left: 1.2vw;
 }
 
 aside ol li a {
@@ -250,6 +288,16 @@ footer {
 
     nav h1 {
         display: block;    
+    }
+
+    section {
+        text-align: center;
+        align-items: center;
+    }
+
+    section > * {
+        margin-left: 5vw;
+        margin-right: 5vw;
     }
 
     section h1 {
