@@ -9,10 +9,17 @@
     --nav-element-animation-speed: 0.4s;
 }
 
+html {
+    min-width: 100vw;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
 body {
     margin: 0;
     padding: 0;
     background-color: var(--section-bg-color);
+    width: 100vw;
 }
 
 
@@ -154,9 +161,10 @@ section {
 
 section > * {
     margin-left: 1vw;
+    margin-right: 1vw;
 }
 
-section *:last-child {
+section > *:last-child {
     margin-bottom: 4vh;
 }
 
@@ -166,12 +174,42 @@ section *:last-child {
     height: 25vh;
     margin: 0;
     padding: 0;
+    border: none;
 }
 
-section img {
-    width: 30%;
-    height: auto; 
-    border: 1px solid black;
+.logos-container {
+    display: flex; 
+    flex-direction: row; 
+    width: 100%;
+    align-items: center;
+}
+
+.logos-container .caption-img-container {
+    margin-right: 2vw;
+}
+
+.logos-container .caption-img-container:last-child {
+    margin-right: 0;
+}
+
+.caption-img-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: auto;
+}
+
+.caption-img-container > *{
+    height: auto;
+    width: 100%;
+    text-align: center;
+}
+
+.caption-img-container > *:last-child {
+    margin-top: auto;
+    margin-bottom: 0;
 }
 
 section .image-description {
@@ -220,6 +258,8 @@ section table caption {
 aside {
     display: flex;
     flex-direction: column;
+    max-width: 20vw;
+    overflow-wrap: break-word;
 }
 
 aside h3 {
@@ -233,6 +273,7 @@ aside ol {
 
 aside ol li a {
     color: black;
+    overflow-wrap: break-word;
 }
 /* ----- ASDIE END ----- */
 
@@ -293,11 +334,6 @@ footer {
     section {
         text-align: center;
         align-items: center;
-    }
-
-    section > * {
-        margin-left: 5vw;
-        margin-right: 5vw;
     }
 
     section h1 {
