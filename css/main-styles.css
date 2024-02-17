@@ -331,9 +331,18 @@ footer {
         display: block;    
     }
 
+    .logos-container {
+        width: 90%;
+    }
+
     section {
         text-align: center;
         align-items: center;
+    }
+
+    section > * {
+        margin-left: 1vw;
+        margin-right: 1vw;
     }
 
     section h1 {
