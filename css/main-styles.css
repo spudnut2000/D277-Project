@@ -208,7 +208,7 @@ section > *:last-child {
 }
 
 .caption-img-container > *:last-child {
-    margin-top: auto;
+    margin-top: 1vh; 
     margin-bottom: 0;
 }
 
