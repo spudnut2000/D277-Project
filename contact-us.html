@@ -30,15 +30,18 @@
         <section>
             <img id="section-heading-img" src="img/Alabama_Banner-2393771397.jpg" alt="Image of Alabama">
             <h1>Have a question?</h1>
-            <p>Paragraph 1<a href="#" class="reference">[1]</a></p>
+            
+            <form action="POST" id="contact-form">
+                <input type="text" id="first-name-field" placeholder="First Name">
+                <input type="text" id="last-name-field" placeholder="Last Name">
+                <input type="email" id="email-field" placeholder="Email">
+                <input type="email" id="verify-email-field" placeholder="Verify Email">
+                <textarea id="message-field" placeholder="Tell us a bit about your inquiry.."></textarea>
+                <input type="submit" id="submit-button" value="Submit">
+            </form>
         </section>
 
-        <aside>
-            <h3>References:</h3>
-            <ol>
-                <li><a href="#">LINK</a></li>
-            </ol>
-        </aside>
+        <aside></aside>
 
         <footer>
             <ul id="footer-nav">
@@ -51,5 +54,34 @@
             </ul>
         </footer>
     </div>
+
+    <script>
+        let isEmailValid = false;
+
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            if (!isEmailValid) {
+                event.preventDefault();
+                alert('Emails do not match!');
+            } else {
+                event.preventDefault();
+                alert('Thank you for your inquiry! We will get back to you with 24 business hours.');
+            }
+        });
+
+        document.getElementById('verify-email-field').addEventListener('input', function() {
+            const emailField = document.getElementById('email-field');
+            const verifyEmailField = document.getElementById('verify-email-field');
+            
+            if (emailField.value !== verifyEmailField.value) {
+                verifyEmailField.style.color = 'red';
+                isEmailValid = false;
+            } else {
+                verifyEmailField.style.color = 'black';
+                isEmailValid = true;
+            }
+        });
+        
+    </script>
+
 </body>
 </html>
